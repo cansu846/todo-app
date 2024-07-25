@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+    <!--BOOTSTRAP-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    {% include 'core/navbar.html' %}
+    <div class="container my-5">
+    {% block content %}
+    <h1>Hello, world!</h1>
+    {% endblock content %}
+    </div>
+    {% include 'core/footer.html' %}
+
+    <!--BOOTSTRAP JS-->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

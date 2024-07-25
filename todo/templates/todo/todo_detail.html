@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="col-sm-6 offset-sm-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Ana sayfa</a></li>
+      <li class="breadcrumb-item"><a href="{{ todo.category.get_absolute_url }}"> {{ todo.category.title }} </a></li>
+      <li class="breadcrumb-item active" aria-current="page"> {{ todo.title }} </li>
+    </ol>
+  </nav>
+    <h1 class="text-primary my-3">TODO DETAIL</h1>
+    <p> {{ todo.title}} </p>
+    <div class="btn btn-primary">
+      <a href="/" class="text-light" >Anasayfa</a>
+    </div>
+    <br><br>
+    <ul>
+      {% for tag in todo.tag.all %}
+      <li class="list-inline-item">
+        <span class="">
+         
+          <a href="{{ tag.get_absolute_url }}" class="badge badge-pill bg-primary"> {{ tag }} </a>
+         
+         
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+</div>
+
+{% endblock content %}
